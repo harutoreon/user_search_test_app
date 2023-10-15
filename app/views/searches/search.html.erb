@@ -1,2 +1,13 @@
-<h1>Searches#search</h1>
-<p>Find me in app/views/searches/search.html.erb</p>
+<h2>Search Result</h2>
+
+<% unless @users.empty? %>
+  <% @users.each do |user| %>
+    <%= link_to user.name, user_path(user) %>
+  <% end %>
+<% else %>
+  <p>no matching user</p>
+<% end %>
+
+<p>
+  <%= link_to 'user list', users_path %>
+</p>
