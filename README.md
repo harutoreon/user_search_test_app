@@ -1,24 +1,25 @@
-# README
+# テストアプリケーション
+ユーザー検索機能を実装したアプリケーション。<br>
+特別な gem は使ってない。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![テストアプリ](https://github.com/harutoreon/user_search_test_app/assets/60533209/5283e417-09cf-4f40-b267-40a34062effa)
 
-Things you may want to cover:
+## 使用技術
+- Ruby 3.2.0
+- Rails 7.1.1
+- SQlite3 1.6.7
+- Puma 6.4.0
 
-* Ruby version
+## インフラ構成
+無し
 
-* System dependencies
+## 機能一覧
+- ユーザー一覧
+- ユーザー表示
+- ユーザー新規登録
+- ユーザー編集
+- ユーザー削除
+- ユーザー検索
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## テスト
+無し
