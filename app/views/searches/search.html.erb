@@ -2,7 +2,9 @@
 
 <% unless @users.empty? %>
   <% @users.each do |user| %>
-    <%= link_to user.name, user_path(user) %>
+    <p>
+      <%= link_to user.name, user_path(user) %>
+    </p>
   <% end %>
 <% else %>
   <p>No matching user</p>
