@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
   def search
-    @users = User.search(params[:search][:search], params[:search][:word])
+    @users = User.search(params[:search], params[:word])
   end
 end
