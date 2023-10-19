@@ -11,4 +11,6 @@ class User < ApplicationRecord
       User.where('name LIKE?', "%" + User.sanitize_sql_like("#{word}") + "%")
     end
   end
+
+  scope :name_search, -> (word) { where('name LIKE?', "%" + User.sanitize_sql_like("#{word}") + "%") }
 end
