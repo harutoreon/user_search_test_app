@@ -1,16 +1,10 @@
 class User < ApplicationRecord
-  def self.search(search, word)
-    case search
-    when 'perfect'
-      User.where('name LIKE?', User.sanitize_sql_like("#{word}"))
-    when 'forward'
-      User.where('name LIKE?', User.sanitize_sql_like("#{word}") + "%")
-    when 'backward'
-      User.where('name LIKE?', "%" + User.sanitize_sql_like("#{word}"))
-    when 'partial'
-      User.where('name LIKE?', "%" + User.sanitize_sql_like("#{word}") + "%")
-    end
-  end
+  scope :search, -> (search, word) do
+    scope :perfect_search,  -> { where('name LIKE?', "#{word}") if word.present? }
+    scope :forward_search,  -> { where('name LIKE?', "#{word}%") if word.present? }
+    scope :backward_search, -> { where('name LIKE?', "%#{word}") if word.present? }
+    scope :partial_search,  -> { where('name LIKE?', "%#{word}%") if word.present? }
 
-  scope :name_search, -> (word) { where('name LIKE?', "%" + User.sanitize_sql_like("#{word}") + "%") }
+    send("#{search}_search")
+  end
 end
