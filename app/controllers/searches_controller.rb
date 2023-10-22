@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
 
   def search
-    console
+    # console
     @users = User.search(params[:search], params[:word])
   end
 end
