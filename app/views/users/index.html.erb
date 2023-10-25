@@ -1,8 +1,17 @@
-<%= form_with url: search_path, method: :get do |f| %>
-  <%= f.text_field :word %>
-  <%= f.select :search, ["perfect", "forward", "backward", "partial"] %>
-  <%= f.submit "Search"%>
-<% end %>
+<div class="row">
+  <%= form_with url: search_path, method: :get do |f| %>
+    <div class="col" >
+      <label>keyword</label>
+      <%= f.text_field :word %>
+    </div>
+    <div class="col">
+      <%= f.select :search, ["perfect", "forward", "backward", "partial"] %>
+    </div>
+    <div class="col">
+      <%= f.submit "Search" %>
+    </div>
+  <% end %>
+</div>
 
 <h1>User List</h1>
 
