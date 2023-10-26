@@ -1,15 +1,21 @@
-<div class="row">
+<div class="container">
   <%= form_with url: search_path, method: :get do |f| %>
-    <div class="col" >
+    <div class="mb-1">
       <label>keyword: </label>
+    </div>
+    <div class="mb-3">
       <%= f.text_field :word %>
     </div>
-    <div class="col">
+
+    <div class="mb-1">
       <label>search pattern: </label>
+    </div>
+    <div class="mb-4">
       <%= f.select :search, ["perfect", "forward", "backward", "partial"] %>
     </div>
-    <div class="col">
-      <%= f.submit "Search" %>
+
+    <div>
+      <%= f.submit "Search", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
