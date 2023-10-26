@@ -1,0 +1,7 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+input, select {
+  width: 11.5rem;
+}
+
